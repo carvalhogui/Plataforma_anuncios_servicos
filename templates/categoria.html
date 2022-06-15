@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+{% block content %}
+<html>
+  <body>
+      <h1>Anúncios</h1>
+  {% for result_as_dict in result_as_dict %}
+      <h1>{{ result_as_dict['nome'] }}</h1>
+      <a>Endereço: {{ result_as_dict['rua'] }}, {{ result_as_dict['bairro'] }}, {{ result_as_dict['cidade'] }}, {{ result_as_dict['estado'] }}</a>
+      <h4>{{ result_as_dict['descricaoservico'] }}</h4>
+      <span><i>Anúncio criado em {{ result_as_dict['created'] }}</i></span>
+  <hr>
+  </body>
+</html>
+{% endfor %}
+{% endblock%}

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+
+{% block content %}
+<html>
+  <body>
+      <h1>Anúncios</h1>
+  {% for cadastro in cadastros %}
+      <h1>{{ cadastro['nome'] }}</h1>
+      <a>Endereço: {{ cadastro['rua'] }}, {{ cadastro['bairro'] }}, {{ cadastro['cidade'] }}, {{ cadastro['estado'] }}</a>
+      <h4>{{ cadastro['descricaoservico'] }}</h4>
+      <span><i>Anúncio criado em {{ cadastro['created'] }}</i></span>
+  <hr>
+  </body>
+</html>
+{% endfor %}
+{% endblock%}
