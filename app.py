@@ -4,6 +4,7 @@ from flask import Flask, render_template, request, url_for, flash, redirect, jso
 from flask_sqlalchemy import SQLAlchemy
 from unidecode import unidecode
 
+#Conecta ao banco de dados sqlite database.db
 project_dir = os.path.dirname(os.path.abspath(__file__))
 database_file = "sqlite:///{}".format(os.path.join(project_dir, "database.db"))
 
@@ -15,17 +16,15 @@ db = SQLAlchemy(app)
 connection = sqlite3.connect('database.db',check_same_thread=False)
 c = connection.cursor()
 
-estados=[{'estado':'AC'},{'estado':'AL'},{'estado':'AM'},{'estado':'AP'},{'estado':'BA'},{'estado':'CE'},{'estado':'DF'},{'estado':'ES'},
-         {'estado':'GO'},{'estado':'MA'},{'estado':'MG'},{'estado':'MS'},{'estado':'MT'},{'estado':'PA'},{'estado':'PB'},{'estado':'PE'},
-         {'estado':'PI'},{'estado':'PR'},{'estado':'RJ'},{'estado':'RN'},{'estado':'RO'},{'estado':'RS'},{'estado':'RR'},{'estado':'SC'},
-         {'estado':'SP'},{'estado':'SE'},{'estado':'TO'}]
+# é necessário retornar os valores em forma de dicionário e, em todas as rotas criadas, ao executar a query, dava erro.
+# Então criei essa lista com o nome de todas as colunas do banco de dados, para então conseguir retornar no formato chave:valor
 
 lista = ['id', 'created', 'nome', 'cpf', 'email', 'dataNascimento', 'titulo',
          'categoria', 'descricaoservico', 'rua', 'bairro', 'cidade', 'estado', 'cep',
          'tipoderedesocial1', 'link1', 'tipoderedesocial2', 'link2', 'tipoderedesocial3', 'link3',
          'numero1', 'numero2', 'numero3', 'numero4']
 
-
+#Modelo do banco de dados de acordo com a tabela criada em esquema.sql
 class Cadastro(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     created = db.Column(db.DateTime, default=datetime.datetime.utcnow)
@@ -52,6 +51,8 @@ class Cadastro(db.Model):
     numero3 = db.Column(db.String(11), nullable=True)
     numero4 = db.Column(db.String(11), nullable=True)
 
+
+#rotas
 @app.route("/", methods=["GET", "POST"])
 def home():
     cadastros = Cadastro.query.all()
@@ -87,8 +88,6 @@ def cadastro():
             flash("O Nome é obrigatório")
         elif not cpf:
             flash("O CPF é obrigatório")
-        elif not email:
-            flash("O email é obrigatório")
         elif not dataNascimento:
             flash("A data de nascimento é obrigatória")
         elif not descricaoservico:
@@ -115,11 +114,12 @@ def cadastro():
             db.session.add(cadastro)
             db.session.commit()
             return redirect(url_for('ultimosanuncios'))
-    global estados
-    return render_template("cadastro.html", estados=estados)
 
-@app.route('/<categoria>')
+    return render_template("cadastro.html")
+
+@app.route('/categoria/<categoria>')
 def categoria(categoria):
+    #as variáveis global connection, global c e global lista fazem referencia as variáveis definidas fora da função.
     global connection
     global c
     global lista
