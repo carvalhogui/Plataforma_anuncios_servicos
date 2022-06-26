@@ -1,0 +1,103 @@
+* {
+    margin: 0;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.header {
+    width: 100%;
+    height: 80px;
+    left: 0px;
+    top: 0px;
+}
+
+.header #area_logo {
+    float: left;
+    height: 100%;
+    width: 30%;
+    background: #F2F2F2;
+}
+
+.header img {
+    margin: 10px 50px;
+    height: 64px;
+    width: 250px;
+}
+
+.header #btn_anunciar {
+    float: right;
+}
+
+.principal {
+    width: 1200px;
+    margin: auto;
+}
+
+.busca {
+    width: 100%;
+    height: 163px;
+    background: #1C4163;
+}
+
+.busca #texto_busca {
+    float: left;
+    width: 34%;
+    margin-left: 10px;
+    margin-top: 45px;
+}
+
+.busca #texto_busca h1 {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 36px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.busca #form_busca {
+    float: right;
+    width: 65%;
+}
+
+.conteudo {
+    height: 400px;
+    text-align: center;
+}
+
+.categorias {
+    float: left;
+    width: 30%;
+    background: #F2F2F2;
+    height: 400px;
+}
+
+.anuncios {
+    float: right;
+    width: 70%;
+    height: 400px;
+}
+
+.footer {
+    width: 100%;
+    height: 73px;
+    background: #1C4163;
+}
+
+.float-r {
+    float: right;
+}
+
+.frm-busca-d {
+    margin-top: 60px;
+    margin-right: 64px;
+}
+
+.frm-busca-d input {
+    height: 45px;
+}
+
+.w-500 {
+    width: 500px;
+}

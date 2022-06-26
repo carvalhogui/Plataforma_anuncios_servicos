@@ -10,6 +10,7 @@ database_file = "sqlite:///{}".format(os.path.join(project_dir, "database.db"))
 
 app = Flask(__name__)
 app.config["SECRET_KEY"] = 'your secret key'
+app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 app.config["SQLALCHEMY_DATABASE_URI"] = database_file
 db = SQLAlchemy(app)
 
@@ -56,7 +57,7 @@ class Cadastro(db.Model):
 @app.route("/", methods=["GET", "POST"])
 def home():
     cadastros = Cadastro.query.all()
-    return render_template("home.html", cadastros=cadastros)
+    return render_template("index.html", cadastros=cadastros)
 
 @app.route("/cadastro", methods=["GET", "POST"])
 def cadastro():

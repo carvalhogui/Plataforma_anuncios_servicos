@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="principal">
+    {% include 'includes/header.html' %}
+    <div class="busca">
+        <div id="texto_busca">
+            <h1>{% block title %}Encontre o profissional que precisa em instantes!{% endblock %}</h1>
+        </div>
+        <div id="form_busca">
+            <form action="" method="get">
+                <div class="float-r frm-busca-d">
+                    <input type="submit" value="Pesquisar">
+                </div>
+                <div class="float-r frm-busca-d">
+                    <input type="search"class="w-500" name="busca" placeholder="Busque por nome, categoria, cidade...">
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="conteudo">
+        <div class="categorias">
+            <h2>Categorias</h2>
+        </div>
+        <div class="anuncios">
+            <h2>Últimos Anúncios</h2>
+        </div>
+    </div>
+    {% include 'includes/footer.html' %}
+</div>
+{% endblock %}
