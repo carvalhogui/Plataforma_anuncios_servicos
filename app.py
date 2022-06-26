@@ -157,3 +157,7 @@ def ultimosanuncios():
     for i in range(len(resultados)):
         result_as_dict.append({k: resultados[i][lista.index(k)] for k in lista})
     return jsonify(result_as_dict)
+
+@app.route('/sobre')
+def sobre():
+    return render_template("about.html")

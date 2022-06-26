@@ -1,0 +1,17 @@
+<div class="anuncios">
+    <h2>Últimos Anúncios</h2>
+    <ul>
+        {% for c in cadastros %}
+        <li>
+            <a href="/anuncio/{{ c['id'] }}">
+                <div>
+                    <div><p>{{ c['titulo'] }}</p></div>
+                    <div><p>{{ c['categoria'] }}</p></div>
+                    <div><p>{{ c['cidade'] }}, {{ c['bairro'] }}</p></div>
+                    <div><p>{{ c['numero4'] }}</p></div>
+                </div>
+            </a>
+        </li>
+        {% endfor %}
+    </ul>
+</div>

@@ -62,21 +62,68 @@
 }
 
 .conteudo {
-    height: 400px;
+    height: 1080px;
     text-align: center;
+}
+
+.conteudo h2 {
+    margin-top: 10px;
+    margin-bottom: 15px;
 }
 
 .categorias {
     float: left;
     width: 30%;
     background: #F2F2F2;
-    height: 400px;
+    height: 1080px;
+}
+
+.categorias ul li a div {
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.categorias ul li a div:hover {
+    background-color: #1C4163;
+    color: #FFFFFF;
+}
+
+.categorias ul {
+    list-style: none;
+    padding: 0;
+}
+
+.categorias ul li a {
+    color: #1C4163;
+    text-decoration: none;
 }
 
 .anuncios {
     float: right;
     width: 70%;
-    height: 400px;
+    height: 1080px;
+}
+
+.anuncios ul {
+    list-style: none;
+    padding: 0;
+}
+
+.anuncios ul li a {
+    color: #1C4163;
+    text-decoration: none;
+}
+
+.anuncios ul li a div {
+    margin-bottom: 15px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    
+}
+
+.anuncios ul li a div:hover {
+    background-color: #1C4163;
+    color: #FFFFFF;
 }
 
 .footer {

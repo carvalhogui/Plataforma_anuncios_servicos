@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="principal">
+    {% include 'includes/header.html' %}
+
+    <div class="conteudo">
+        <div class="categorias">
+            <h2>Categorias</h2>
+            <ul>
+                <li><a href=""><div><img src="/static/img/viagem-e-turismo.png" alt=""><p>Turismo</p></div></a></li>
+                <li><a href=""><div><img src="/static/img/caminhao-de-transporte.png" alt=""><p>Transportes</p></div></a></li>
+                <li><a href=""><div><img src="/static/img/traducao.png" alt=""><p>Tradução</p></div></a></li>
+                <li><a href=""><div><img src="/static/img/cuidados-com-a-pele.png" alt=""><p>Saúde e Beleza</p></div></a></li>
+                <li><a href=""><div><img src="/static/img/eventos.png" alt=""><p>Eventos e Festas</p></div></a></li>
+                <li><a href=""><div><img src="/static/img/baba.png" alt=""><p>Babá</p></div></a></li>
+                <li><a href=""><div><img src="/static/img/limpeza-de-casa.png" alt=""><p>Serviços Domésticos</p></div></a></li>
+                <li><a href=""><div><img src="/static/img/jardinagem.png" alt=""><p>Jardinagem</p></div></a></li>
+                <li><a href=""><div><img src="/static/img/informatica.png" alt=""><p>Informática</p></div></a></li>
+                <li><a href=""><div><img src="/static/img/icons8-teaching-64.png" alt=""><p>Aulas Particulares</p></div></a></li>
+                <li><a href=""><div><img src="/static/img/icons8-question-mark-100.png" alt=""><p>Outros</p></div></a></li>
+            </ul>
+        </div>
+        <div class="anuncios">
+            <h2>Últimos Anúncios</h2>
+            <ul>
+                {% for c in cadastros %}
+                <li>{{ c['nome'] }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+
+
+
+    Este site utiliza ícones obtidos através do Flaticon e Icons8, conforme atribuições abaixo
+    <a href="https://www.flaticon.com/br/icones-gratis/viagem" title="viagem ícones">Viagem ícones criados por GOWI - Flaticon</a>
+    <a href="https://www.flaticon.com/br/icones-gratis/caminhao" title="caminhão ícones">Caminhão ícones criados por Freepik - Flaticon</a>
+    <a href="https://www.flaticon.com/br/icones-gratis/traducao" title="tradução ícones">Tradução ícones criados por Freepik - Flaticon</a>
+    <a href="https://www.flaticon.com/br/icones-gratis/cuidados-com-a-pele" title="cuidados com a pele ícones">Cuidados com a pele ícones criados por Flat Icons - Flaticon</a>
+    <a href="https://www.flaticon.com/br/icones-gratis/eventos" title="eventos ícones">Eventos ícones criados por Vectors Tank - Flaticon</a>
+    <a href="https://www.flaticon.com/br/icones-gratis/baba" title="babá ícones">Babá ícones criados por Flat Icons - Flaticon</a>
+    <a href="https://www.flaticon.com/br/icones-gratis/limpeza-de-casa" title="limpeza de casa ícones">Limpeza de casa ícones criados por Dimas Anom - Flaticon</a>
+    <a href="https://www.flaticon.com/br/icones-gratis/pa" title="pá ícones">Pá ícones criados por Freepik - Flaticon</a>
+    <a href="https://www.flaticon.com/br/icones-gratis/informatica" title="informática ícones">Informática ícones criados por justicon - Flaticon</a>
+    <a target="_blank" href="https://icons8.com/icon/Gv7XSS9nvSkL/teaching">Teaching</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
+    <a target="_blank" href="https://icons8.com/icon/111415/question-mark">Question Mark</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
+
+    {% include 'includes/footer.html' %}
+</div>
+{% endblock %}
