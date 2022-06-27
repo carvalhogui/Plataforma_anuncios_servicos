@@ -71,21 +71,11 @@
     margin-bottom: 15px;
 }
 
-.categorias {
+.left-panel {
     float: left;
     width: 30%;
     background: #F2F2F2;
     height: 1080px;
-}
-
-.categorias ul li a div {
-    padding-top: 5px;
-    padding-bottom: 5px;
-}
-
-.categorias ul li a div:hover {
-    background-color: #1C4163;
-    color: #FFFFFF;
 }
 
 .categorias ul {
@@ -93,9 +83,35 @@
     padding: 0;
 }
 
+.categorias ul li a div {
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
 .categorias ul li a {
     color: #1C4163;
     text-decoration: none;
+}
+
+.categorias ul li a div:hover {
+    background-color: #1C4163;
+    color: #FFFFFF;
+}
+
+.dicas ul {
+    text-align: left;
+    list-style: square;
+}
+
+.dicas ul li {
+    font-size: large;
+    margin-bottom: 20px;
+    width: 90%;
+}
+
+.dicas ul li div {
+    padding-top: 5px;
+    padding-bottom: 5px;
 }
 
 .anuncios {
@@ -147,4 +163,8 @@
 
 .w-500 {
     width: 500px;
+}
+
+.h2-color {
+    color: #1C4163;
 }

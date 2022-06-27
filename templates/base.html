@@ -8,6 +8,12 @@
     <link rel="stylesheet" href="/static/css/style.css">
 </head>
 <body>
-    {% block content %}{% endblock %}
+    <div class="principal">
+        {% block header %}{% endblock %}
+        <div class="conteudo">
+            {% block content %}{% endblock %}
+        </div>
+        {% block footer %}{% endblock %}
+    </div>
 </body>
 </html>

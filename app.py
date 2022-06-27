@@ -59,6 +59,10 @@ def home():
     cadastros = Cadastro.query.all()
     return render_template("index.html", cadastros=cadastros)
 
+@app.route("/anunciar", methods=["GET"])
+def anunciar():
+    return render_template("new.html")
+
 @app.route("/cadastro", methods=["GET", "POST"])
 def cadastro():
     if request.method == 'POST':

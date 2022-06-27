@@ -1,5 +1,5 @@
 <div class="anuncios">
-    <h2>Últimos Anúncios</h2>
+    <h2 class="h2-color">Últimos Anúncios</h2>
     <ul>
         {% for c in cadastros %}
         <li>
@@ -8,7 +8,7 @@
                     <div><p>{{ c['titulo'] }}</p></div>
                     <div><p>{{ c['categoria'] }}</p></div>
                     <div><p>{{ c['cidade'] }}, {{ c['bairro'] }}</p></div>
-                    <div><p>{{ c['numero4'] }}</p></div>
+                    <div><p>{{ c['created'] }}</p></div>
                 </div>
             </a>
         </li>

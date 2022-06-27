@@ -1,0 +1,50 @@
+<div class="anuncios">
+    <h2 class="h2-color">Cadastrar Anúncio</h2>
+    <div>
+        <form action="/cadastrar" method="post">
+            <div>
+                <label for="titulo"><p>Título</p></label>
+                <input type="text" name="titulo" id="titulo" placeholder="Instalação de Antenas" required>
+            </div>
+            <div>
+                <div>
+                    <label for="cidade"><p>Cidade</p></label>
+                    <input type="text" name="cidade" id="cidade" required>  
+                </div>
+                <div>
+                    <label for="bairro"><p>Bairro</p></label>
+                    <input type="text" name="bairro" id="bairro" required>   
+                </div>
+            </div>  
+            <div>
+                <label for="categoria">Categoria</label>
+                <select name="categoria" id="categoria" required>
+                    <option value="">(Selecione uma categoria)</option>
+                    <option value="Turismo">Turismo</option>
+                    <option value="Transportes">Transportes</option>
+                    <option value="Tradução">Tradução</option>
+                    <option value="Saúde e Beleza">Saúde e Beleza</option>
+                    <option value="Eventos e Festas">Eventos e Festas</option>
+                    <option value="Babá">Babá</option>
+                    <option value="Serviços Domésticos">Serviços Domésticos</option>
+                    <option value="Jardinagem">Jardinagem</option>
+                    <option value="Informática">Informática</option>
+                    <option value="Aulas Particulares">Aulas Particulares</option>
+                    <option value="Outros">Outros</option>
+                </select>
+            </div>
+            <div>
+                <label for="nome"><p>Nome</p></label>
+                <input type="text" name="nome" id="nome" required>   
+            </div>                 
+            <div>
+                <label for="descricao"><p>Descrição</p></label>
+                <textarea name="descricao" id="descricao" cols="30" rows="10" placeholder="Instalação de antenas parabólicas. Atendimento com hora marcada." required></textarea>   
+            </div>     
+            <div>
+                <input type="submit" value="Cadastrar">
+                <input type="button" value="Cancelar">
+            </div>        
+        </form>
+    </div>
+</div>
