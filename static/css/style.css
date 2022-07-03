@@ -23,9 +23,25 @@
     width: 250px;
 }
 
-.header #btn_anunciar {
+#btn_anunciar {
     float: right;
+    height: 80%;
+}
+
+#btn_anunciar a {
+    display: inline-block;
+    text-decoration: none;
     height: 100%;
+    padding-top: 25px;
+    padding-left: 15px;
+    padding-right: 15px;
+    font-size: larger;
+    color: #1C4163;
+}
+
+#btn_anunciar a:hover {
+    background-color: #1C4163;
+    color: #FFFFFF;
 }
 
 .principal {
@@ -148,6 +164,23 @@
     width: 100%;
     height: 73px;
     background: #1C4163;
+    color: #FFFFFF;
+    text-align: center;
+}
+
+.footer a {
+    text-decoration: none;
+    color: #FFFFFF;
+    display: inline-block;
+    height: 100%;
+}
+
+.footer a:hover {
+    color: #8fb7dd;
+}
+
+.footer a div {
+    margin-top: 18px;
 }
 
 .float-r {
