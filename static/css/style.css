@@ -210,3 +210,27 @@
     margin-left: 15px;
     margin-right: 15px;
 }
+
+.icons-area {
+    overflow: auto;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.icons-area ul li {
+    list-style: none;
+}
+
+.icons-area a {
+    text-decoration: none;
+}
+
+.flaticon {
+    float: left;
+    width: 50%;
+}
+
+.icons8 {
+    float: right;
+    width: 50%;
+}
