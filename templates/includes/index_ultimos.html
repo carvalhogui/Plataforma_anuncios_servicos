@@ -1,5 +1,11 @@
 <div class="anuncios">
+    {% if categoria %}
+    <h2 class="h2-color">Últimos Anúncios em "{% print(categoria) %}"</h2>
+    {% elif busca %}
+    <h2 class="h2-color">Resultados para "{% print(busca) %}"</h2>
+    {% else %}
     <h2 class="h2-color">Últimos Anúncios</h2>
+    {% endif %}
     <ul>
         {% for c in cadastros %}
         <li>

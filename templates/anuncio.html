@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block header %}
+    {% include 'includes/header.html' %}
+    {% include 'includes/index_busca.html' %}
+{% endblock %}    
+{% block content %}    
+        {% include 'includes/anuncio_dados.html' %}
+        {% include 'includes/anuncio_detalhes.html' %}
+{% endblock %}
+{% block footer %}
+    {% include 'includes/footer.html' %}
+{% endblock %}

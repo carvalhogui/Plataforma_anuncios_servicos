@@ -63,8 +63,9 @@
 }
 
 .conteudo {
-    height: 1080px;
+    min-height: 1080px;
     text-align: center;
+    overflow: auto;
 }
 
 .conteudo h2 {
@@ -76,7 +77,7 @@
     float: left;
     width: 30%;
     background: #F2F2F2;
-    height: 1080px;
+    min-height: 1080px;
 }
 
 .categorias ul {
@@ -118,7 +119,7 @@
 .anuncios {
     float: right;
     width: 70%;
-    height: 1080px;
+    min-height: 1080px;
 }
 
 .anuncios ul {

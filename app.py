@@ -56,12 +56,20 @@ class Cadastro(db.Model):
 #rotas
 @app.route("/", methods=["GET", "POST"])
 def home():
-    cadastros = Cadastro.query.all()
-    return render_template("index.html", cadastros=cadastros)
+    cadastros = Cadastro.query.order_by(Cadastro.id.desc()).all()
+
+    if request.method == 'GET':
+        busca = request.args.get("busca")
+        if busca:
+            cadastros = Cadastro.query.order_by(Cadastro.id.desc()).filter(Cadastro.nome.contains(busca))
+        else:
+            busca = ""
+
+    return render_template("index.html", cadastros=cadastros, busca=busca)
 
 @app.route("/anunciar", methods=["GET"])
 def anunciar():
-    return render_template("new.html")
+    return render_template("cadastro.html")
 
 @app.route("/cadastro", methods=["POST"])
 def cadastro():
@@ -118,23 +126,15 @@ def cadastro():
                                 link3=link3, numero1=numero1, numero2=numero2, numero3=numero3, numero4=numero4)
             db.session.add(cadastro)
             db.session.commit()
-            return redirect(url_for('ultimosanuncios'))
+            return redirect(f"/categoria/{categoria}")
 
-    return render_template("cadastro.html")
+    return redirect(f"/")
 
 @app.route('/categoria/<categoria>')
 def categoria(categoria):
-    #as variáveis global connection, global c e global lista fazem referencia as variáveis definidas fora da função.
-    global connection
-    global c
-    global lista
-    query = "SELECT * FROM cadastro WHERE categoria= '" + categoria + "' "
-    c.execute(query)
-    resultados = c.fetchall()
-    result_as_dict = []
-    for i in range(len(resultados)):
-        result_as_dict.append({k: resultados[i][lista.index(k)] for k in lista})
-    return jsonify(result_as_dict)
+    filtrado_categoria = Cadastro.query.order_by(Cadastro.id.desc()).filter(Cadastro.categoria.contains(categoria))
+    return render_template("index.html", cadastros=filtrado_categoria, categoria=categoria)
+
 
 @app.route('/cidade/<cidade>')
 def cidade(cidade):
@@ -165,3 +165,16 @@ def ultimosanuncios():
 @app.route('/sobre')
 def sobre():
     return render_template("about.html")
+
+@app.route('/anuncio/<anuncio>')
+def anuncio(anuncio):
+    filtrado_anuncio = Cadastro.query.get(anuncio)
+    return render_template("anuncio.html", anuncio=filtrado_anuncio)
+
+@app.route('/admin/delete/<anuncio>')
+def delete(anuncio):
+    anuncio = Cadastro.query.filter_by(id=anuncio)
+    anuncio.delete()
+    db.session.commit()
+    
+    return redirect(f"/")
