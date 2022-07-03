@@ -206,9 +206,30 @@
 
 .fieldset-ib {
     float: left;
-    width: 60%;
+    width: 50%;
     margin-left: 15px;
     margin-right: 15px;
+    text-align: center;
+}
+
+.fieldset-ib label {
+    text-align: left;
+}
+
+.fieldset-ib input, select, textarea {
+    height: 22px;
+    border-radius: 1px solid #dddfe2;
+    width: 95%;
+    margin-top: 5px;
+    margin-bottom: 20px;
+}
+
+.fieldset-ib textarea {
+    height: 100px;
+}
+
+.fieldset-dados {
+    width: 30% !important;
 }
 
 .icons-area {
@@ -233,4 +254,29 @@
 .icons8 {
     float: right;
     width: 50%;
+}
+
+.dados {
+    text-align: left;
+    margin-left: 40px;
+}
+
+.li-local {
+    list-style-image: url("/static/img/icons/placeholder.png");
+}
+
+.li-mail {
+    list-style-image: url("/static/img/icons/email.png");
+}
+
+.li-mail a {
+    text-decoration: none;
+}
+
+.li-telefone {
+    list-style-image: url("/static/img/icons/phone-call.png");
+}
+
+.cad-btn input, button {
+    height: 40px;
 }

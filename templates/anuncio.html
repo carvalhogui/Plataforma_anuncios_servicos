@@ -4,12 +4,12 @@
     {% include 'includes/index_busca.html' %}
 {% endblock %}    
 {% block content %}    
-        <div class="left-panel dicas">
+        <div class="left-panel">
             <h2 class="h2-color">{% print(anuncio.nome) %}</h2>
-            <ul>
-                <li><div><p>{% print(anuncio.cidade) %}, {% print(anuncio.bairro) %}</p></div></li>
-                <li><div><p>{% print(anuncio.email) %}</p></div></li>
-                <li><div><p>{% print(anuncio.numero1) %}</p></div></li>
+            <ul class="dados">
+                <li class="li-local">{% print(anuncio.cidade) %}, {% print(anuncio.bairro) %}</li>
+                <li class="li-mail"><a href="mailto:{% print(anuncio.email) %}">{% print(anuncio.email) %}</a></li>
+                <li class="li-telefone">{% print(anuncio.numero1) %}</li>
             </ul>
         </div>
         <div class="anuncios">
