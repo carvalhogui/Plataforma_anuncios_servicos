@@ -4,8 +4,20 @@
     {% include 'includes/index_busca.html' %}
 {% endblock %}    
 {% block content %}    
-        {% include 'includes/anuncio_dados.html' %}
-        {% include 'includes/anuncio_detalhes.html' %}
+        <div class="left-panel dicas">
+            <h2 class="h2-color">{% print(anuncio.nome) %}</h2>
+            <ul>
+                <li><div><p>{% print(anuncio.cidade) %}, {% print(anuncio.bairro) %}</p></div></li>
+                <li><div><p>{% print(anuncio.email) %}</p></div></li>
+                <li><div><p>{% print(anuncio.numero1) %}</p></div></li>
+            </ul>
+        </div>
+        <div class="anuncios">
+            <h2 class="h2-color">{% block title %}{% print(anuncio.titulo) %}{% endblock %}</h2>
+            <div>
+                <p>{% print anuncio.descricaoservico %}</p>
+            </div>
+        </div>
 {% endblock %}
 {% block footer %}
     {% include 'includes/footer.html' %}
