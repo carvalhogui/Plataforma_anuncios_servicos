@@ -63,31 +63,31 @@ def home():
 def anunciar():
     return render_template("new.html")
 
-@app.route("/cadastro", methods=["GET", "POST"])
+@app.route("/cadastro", methods=["POST"])
 def cadastro():
     if request.method == 'POST':
         nome = request.form['nome'][:30]
-        cpf = request.form['cpf'][:12]
+        cpf = "0" # request.form['cpf'][:12]
         email = request.form['email'][:30]
-        dataNascimento = request.form['dataNascimento'][:10]
+        dataNascimento = "0" # request.form['dataNascimento'][:10]
         titulo = request.form['titulo'][:150]
         categoria = request.form['categoria'][:20]
-        descricaoservico = request.form['descricaoservico'][:200]
-        rua = request.form['rua'][:40]
+        descricaoservico = request.form['descricao'][:200]
+        rua = "0" # request.form['rua'][:40]
         bairro = unidecode(request.form['bairro'].capitalize())[:30]
         cidade = unidecode(request.form['cidade'].capitalize())[:30]
-        estado = request.form['estado']
+        estado = "SP" # request.form['estado']
         cep = request.form['cep'][:9]
-        tiporedesocial1 = request.form['tiporedesocial1'][:15]
-        link1 = request.form['link1'][:50]
-        tiporedesocial2 = request.form['tiporedesocial2'][:15]
-        link2 = request.form['link2'][:50]
-        tiporedesocial3 = request.form['tiporedesocial3'][:15]
-        link3 = request.form['link3'][:50]
-        numero1 = request.form['numero1'][:12]
-        numero2 = request.form['numero2'][:12]
-        numero3 = request.form['numero3'][:12]
-        numero4 = request.form['numero4'][:12]
+        tiporedesocial1 = "Facebook" # request.form['facebook'][:15]
+        link1 = request.form['facebook'][:50]
+        tiporedesocial2 = "Instagram" # request.form['instagram'][:15]
+        link2 = request.form['instagram'][:50]
+        tiporedesocial3 = "0" # request.form['tiporedesocial3'][:15]
+        link3 = "0" # request.form['link3'][:50]
+        numero1 = request.form['telefone'][:12]
+        numero2 = "0" # request.form['numero2'][:12]
+        numero3 = "0" # request.form['numero3'][:12]
+        numero4 = "0" # request.form['numero4'][:12]
 
         if not nome:
             flash("O Nome é obrigatório")

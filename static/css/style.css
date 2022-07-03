@@ -25,6 +25,7 @@
 
 .header #btn_anunciar {
     float: right;
+    height: 100%;
 }
 
 .principal {
@@ -167,4 +168,11 @@
 
 .h2-color {
     color: #1C4163;
+}
+
+.fieldset-ib {
+    float: left;
+    width: 60%;
+    margin-left: 15px;
+    margin-right: 15px;
 }

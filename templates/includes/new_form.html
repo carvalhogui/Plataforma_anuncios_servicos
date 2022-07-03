@@ -1,50 +1,76 @@
 <div class="anuncios">
     <h2 class="h2-color">Cadastrar Anúncio</h2>
     <div>
-        <form action="/cadastrar" method="post">
-            <div>
-                <label for="titulo"><p>Título</p></label>
-                <input type="text" name="titulo" id="titulo" placeholder="Instalação de Antenas" required>
-            </div>
-            <div>
+        <form action="/cadastro" method="post">
+            <fieldset class="fieldset-ib">
+                <legend>Informações Básicas</legend>
                 <div>
-                    <label for="cidade"><p>Cidade</p></label>
-                    <input type="text" name="cidade" id="cidade" required>  
+                    <label for="titulo"><p>Título</p></label>
+                    <input type="text" name="titulo" id="titulo" placeholder="Instalação de Antenas" required>
                 </div>
                 <div>
-                    <label for="bairro"><p>Bairro</p></label>
-                    <input type="text" name="bairro" id="bairro" required>   
+                    <div>
+                        <label for="cidade"><p>Cidade</p></label>
+                        <input type="text" name="cidade" id="cidade" required>  
+                    </div>
+                    <div>
+                        <label for="bairro"><p>Bairro</p></label>
+                        <input type="text" name="bairro" id="bairro" required>   
+                    </div>
+                    <div>
+                        <label for="cep"><p>CEP</p></label>
+                        <input type="text" name="cep" id="cep" required>   
+                    </div>                
+                </div>  
+                <div>
+                    <label for="categoria">Categoria</label>
+                    <select name="categoria" id="categoria" required>
+                        <option value="">(Selecione uma categoria)</option>
+                        <option value="Turismo">Turismo</option>
+                        <option value="Transportes">Transportes</option>
+                        <option value="Tradução">Tradução</option>
+                        <option value="Saúde e Beleza">Saúde e Beleza</option>
+                        <option value="Eventos e Festas">Eventos e Festas</option>
+                        <option value="Babá">Babá</option>
+                        <option value="Serviços Domésticos">Serviços Domésticos</option>
+                        <option value="Jardinagem">Jardinagem</option>
+                        <option value="Informática">Informática</option>
+                        <option value="Aulas Particulares">Aulas Particulares</option>
+                        <option value="Outros">Outros</option>
+                    </select>
                 </div>
-            </div>  
-            <div>
-                <label for="categoria">Categoria</label>
-                <select name="categoria" id="categoria" required>
-                    <option value="">(Selecione uma categoria)</option>
-                    <option value="Turismo">Turismo</option>
-                    <option value="Transportes">Transportes</option>
-                    <option value="Tradução">Tradução</option>
-                    <option value="Saúde e Beleza">Saúde e Beleza</option>
-                    <option value="Eventos e Festas">Eventos e Festas</option>
-                    <option value="Babá">Babá</option>
-                    <option value="Serviços Domésticos">Serviços Domésticos</option>
-                    <option value="Jardinagem">Jardinagem</option>
-                    <option value="Informática">Informática</option>
-                    <option value="Aulas Particulares">Aulas Particulares</option>
-                    <option value="Outros">Outros</option>
-                </select>
-            </div>
-            <div>
-                <label for="nome"><p>Nome</p></label>
-                <input type="text" name="nome" id="nome" required>   
-            </div>                 
-            <div>
-                <label for="descricao"><p>Descrição</p></label>
-                <textarea name="descricao" id="descricao" cols="30" rows="10" placeholder="Instalação de antenas parabólicas. Atendimento com hora marcada." required></textarea>   
-            </div>     
+                <div>
+                    <label for="nome"><p>Nome</p></label>
+                    <input type="text" name="nome" id="nome" required>   
+                </div>                 
+                <div>
+                    <label for="descricao"><p>Descrição</p></label>
+                    <textarea name="descricao" id="descricao" cols="30" rows="10" placeholder="Instalação de antenas parabólicas. Atendimento com hora marcada." required></textarea>   
+                </div> 
+            </fieldset>
+            <fieldset>
+                <legend>Dados para Contato</legend>
+                <div>
+                    <label for="email"><p>E-mail</p></label>
+                    <input type="email" name="email" id="email" placeholder="E-mail para contato" required>
+                </div>      
+                <div>
+                    <label for="telefone"><p>Telefone</p></label>
+                    <input type="tel" name="telefone" id="telefone" placeholder="Telefone" required>
+                </div>          
+                <div>
+                    <label for="facebook"><p>Facebook</p></label>
+                    <input type="text" name="facebook" id="facebook" placeholder="Página no Facebook" required>
+                </div>          
+                <div>
+                    <label for="instagram"><p>Instagram</p></label>
+                    <input type="text" name="instagram" id="instagram" placeholder="Usuário do Instagram" required>
+                </div>                                                                    
+            </fieldset>      
             <div>
                 <input type="submit" value="Cadastrar">
                 <input type="button" value="Cancelar">
-            </div>        
+            </div>              
         </form>
     </div>
 </div>
