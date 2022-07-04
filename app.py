@@ -2,6 +2,7 @@ import os, datetime
 import sqlite3
 from flask import Flask, render_template, request, url_for, flash, redirect, jsonify
 from flask_sqlalchemy import SQLAlchemy
+from sqlalchemy import or_
 from unidecode import unidecode
 
 #Conecta ao banco de dados sqlite database.db
@@ -61,7 +62,16 @@ def home():
     if request.method == 'GET':
         busca = request.args.get("busca")
         if busca:
-            cadastros = Cadastro.query.order_by(Cadastro.id.desc()).filter(Cadastro.nome.contains(busca))
+            cadastros = Cadastro.query.order_by(Cadastro.id.desc()).filter(or_(
+                Cadastro.nome.contains(busca), 
+                Cadastro.titulo.contains(busca),
+                Cadastro.titulo.contains(busca),
+                Cadastro.categoria.contains(busca),
+                Cadastro.descricaoservico.contains(busca),
+                Cadastro.cidade.contains(busca),
+                Cadastro.bairro.contains(busca)
+                )
+            )
         else:
             busca = ""
 
@@ -135,7 +145,6 @@ def categoria(categoria):
     filtrado_categoria = Cadastro.query.order_by(Cadastro.id.desc()).filter(Cadastro.categoria.contains(categoria))
     return render_template("index.html", cadastros=filtrado_categoria, categoria=categoria)
 
-
 @app.route('/cidade/<cidade>')
 def cidade(cidade):
     global connection
@@ -176,5 +185,5 @@ def delete(anuncio):
     anuncio = Cadastro.query.filter_by(id=anuncio)
     anuncio.delete()
     db.session.commit()
-    
+
     return redirect(f"/")
